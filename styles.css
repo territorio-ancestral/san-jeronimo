@@ -1,0 +1,900 @@
+/* ===================================
+   Variables y Reset
+   =================================== */
+:root {
+  /* Paleta de colores inspirada en cultura indígena */
+  --color-tierra: #8b4513;
+  --color-oro: #daa520;
+  --color-jade: #2d5f3f;
+  --color-cielo: #4a90a4;
+  --color-fuego: #c44536;
+  --color-arena: #e8c99b;
+  --color-noche: #1a1a2e;
+  --color-luz: #f5f5dc;
+
+  /* Tipografía */
+  --font-titulo: "Cinzel", serif;
+  --font-texto: "Lora", serif;
+
+  /* Espaciado */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-texto);
+  line-height: 1.8;
+  color: var(--color-noche);
+  background-color: var(--color-luz);
+  overflow-x: hidden;
+}
+
+/* ===================================
+   Header y Navegación
+   =================================== */
+.main-header {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-tierra) 0%, var(--color-noche) 100%);
+  color: var(--color-luz);
+  padding: var(--spacing-md) 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(218, 165, 32, 0.1) 35px, rgba(218, 165, 32, 0.1) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(218, 165, 32, 0.05) 35px, rgba(218, 165, 32, 0.05) 70px);
+  opacity: 0.3;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.tribal-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-oro) 0%, var(--color-fuego) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--color-luz);
+  box-shadow: 0 0 30px rgba(218, 165, 32, 0.5);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 30px rgba(218, 165, 32, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(218, 165, 32, 0.8);
+  }
+}
+
+.sun-symbol {
+  font-size: 3rem;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.site-title {
+  font-family: var(--font-titulo);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-oro);
+  margin-top: var(--spacing-xs);
+}
+
+/* Navegación */
+.main-nav {
+  position: relative;
+  z-index: 3;
+  margin-top: var(--spacing-md);
+}
+
+.nav-toggle {
+  display: none;
+  background: var(--color-oro);
+  color: var(--color-noche);
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--color-luz);
+  text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: var(--color-oro);
+  color: var(--color-noche);
+  border-color: var(--color-oro);
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   Secciones
+   =================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.content-section {
+  padding: var(--spacing-xl) 0;
+  position: relative;
+}
+
+.section-light {
+  background-color: var(--color-luz);
+}
+
+.section-dark {
+  background: linear-gradient(135deg, var(--color-noche) 0%, var(--color-tierra) 100%);
+  color: var(--color-luz);
+}
+
+.section-pattern {
+  background-color: var(--color-arena);
+  background-image: repeating-linear-gradient(60deg, transparent, transparent 40px, rgba(139, 69, 19, 0.05) 40px, rgba(139, 69, 19, 0.05) 80px);
+}
+
+.section-pattern-alt {
+  background: linear-gradient(135deg, var(--color-jade) 0%, var(--color-cielo) 100%);
+  color: var(--color-luz);
+}
+
+.section-title {
+  font-family: var(--font-titulo);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: inherit;
+}
+
+.section-title-hero {
+  font-family: var(--font-titulo);
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-oro);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tribal-divider {
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(to right, transparent, var(--color-oro), transparent);
+  margin: 0 auto var(--spacing-lg);
+  position: relative;
+}
+
+.tribal-divider::before,
+.tribal-divider::after {
+  content: "◆";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-oro);
+  font-size: 1rem;
+}
+
+.tribal-divider::before {
+  left: -20px;
+}
+
+.tribal-divider::after {
+  right: -20px;
+}
+
+/* ===================================
+   Sección Hero
+   =================================== */
+.hero-section {
+  background:
+    linear-gradient(135deg, rgba(45, 95, 63, 0.9) 0%, rgba(74, 144, 164, 0.9) 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%238B4513" width="1200" height="600"/><circle cx="200" cy="150" r="50" fill="%23DAA520" opacity="0.3"/><circle cx="800" cy="400" r="70" fill="%23DAA520" opacity="0.2"/><circle cx="1000" cy="200" r="40" fill="%23DAA520" opacity="0.25"/></svg>');
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-luz);
+  text-align: center;
+  position: relative;
+  padding: var(--spacing-xl) 0;
+}
+
+.hero-content {
+  max-width: 800px;
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-text {
+  font-size: 1.3rem;
+  line-height: 2;
+  margin-bottom: var(--spacing-md);
+}
+
+.decorative-line {
+  width: 100px;
+  height: 3px;
+  background: var(--color-oro);
+  margin: var(--spacing-md) auto 0;
+}
+
+/* ===================================
+   Cards y Grids
+   =================================== */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.content-card {
+  background: white;
+  padding: var(--spacing-md);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-top: 4px solid var(--color-oro);
+}
+
+.content-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.content-card h3 {
+  font-family: var(--font-titulo);
+  color: var(--color-tierra);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.5rem;
+}
+
+/* ===================================
+   Historias
+   =================================== */
+.story-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.story-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-md);
+  border-radius: 10px;
+  border-left: 5px solid var(--color-oro);
+  backdrop-filter: blur(10px);
+}
+
+.story-title {
+  font-family: var(--font-titulo);
+  color: var(--color-oro);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.8rem;
+}
+
+.story-text {
+  font-size: 1.1rem;
+  line-height: 1.9;
+}
+
+/* ===================================
+   Tradiciones
+   =================================== */
+.traditions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.tradition-item {
+  background: white;
+  padding: var(--spacing-md);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tradition-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-oro);
+}
+
+.tradition-icon {
+  font-size: 2.5rem;
+}
+
+.tradition-header h3 {
+  font-family: var(--font-titulo);
+  color: var(--color-tierra);
+  font-size: 1.3rem;
+}
+
+/* ===================================
+   Dichos
+   =================================== */
+.sayings-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.saying-card {
+  background: white;
+  padding: var(--spacing-md);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border: 2px solid var(--color-tierra);
+}
+
+.quote-mark {
+  font-size: 4rem;
+  color: var(--color-oro);
+  opacity: 0.3;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: Georgia, serif;
+}
+
+.saying-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-tierra);
+  margin: var(--spacing-md) 0 var(--spacing-sm);
+  padding-left: var(--spacing-md);
+}
+
+.saying-footer {
+  text-align: right;
+  color: var(--color-jade);
+  font-weight: 600;
+}
+
+/* ===================================
+   Música
+   =================================== */
+.music-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-lg);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.instruments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.instrument-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-md);
+  border-radius: 10px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(218, 165, 32, 0.3);
+  transition: all 0.3s ease;
+}
+
+.instrument-card:hover {
+  transform: scale(1.05);
+  border-color: var(--color-oro);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.instrument-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.instrument-card h3 {
+  font-family: var(--font-titulo);
+  color: var(--color-oro);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ===================================
+   Eventos
+   =================================== */
+.events-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.event-item {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: var(--spacing-md);
+  align-items: start;
+}
+
+.event-date {
+  background: var(--color-tierra);
+  color: var(--color-luz);
+  padding: var(--spacing-sm);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.event-date .month {
+  display: block;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-oro);
+}
+
+.event-date .day {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: var(--font-titulo);
+}
+
+.event-details {
+  background: white;
+  padding: var(--spacing-md);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid var(--color-oro);
+}
+
+.event-details h3 {
+  font-family: var(--font-titulo);
+  color: var(--color-tierra);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.5rem;
+}
+
+/* ===================================
+   Gastronomía
+   =================================== */
+.gastronomy-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-lg);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.dish-card {
+  background: white;
+  padding: var(--spacing-md);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.dish-card:hover {
+  transform: translateY(-5px);
+}
+
+.dish-icon {
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.dish-card h3 {
+  font-family: var(--font-titulo);
+  color: var(--color-jade);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.4rem;
+}
+
+.dish-card p {
+  color: var(--color-noche);
+}
+
+/* ===================================
+   Territorio
+   =================================== */
+.territory-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+.territory-text h3 {
+  font-family: var(--font-titulo);
+  color: var(--color-oro);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.8rem;
+}
+
+.territory-text p {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.1rem;
+}
+
+.sacred-sites-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sacred-sites-list li {
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  border-left: 4px solid var(--color-oro);
+  font-size: 1.1rem;
+}
+
+.sacred-sites-list strong {
+  color: var(--color-oro);
+}
+
+.territory-info-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-md);
+  border-radius: 10px;
+  border: 2px solid var(--color-oro);
+  backdrop-filter: blur(10px);
+}
+
+.territory-info-box h3 {
+  font-family: var(--font-titulo);
+  color: var(--color-oro);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.info-item {
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  border-bottom: 1px solid rgba(218, 165, 32, 0.3);
+  font-size: 1.1rem;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-item strong {
+  color: var(--color-oro);
+}
+
+/* ===================================
+   Footer
+   =================================== */
+.main-footer {
+  background: linear-gradient(135deg, var(--color-noche) 0%, var(--color-tierra) 100%);
+  color: var(--color-luz);
+  padding: var(--spacing-lg) 0 var(--spacing-md);
+  position: relative;
+}
+
+.footer-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(218, 165, 32, 0.05) 35px, rgba(218, 165, 32, 0.05) 70px);
+  opacity: 0.3;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  z-index: 2;
+}
+
+.footer-section h3 {
+  font-family: var(--font-titulo);
+  color: var(--color-oro);
+  margin-bottom: var(--spacing-sm);
+}
+
+.social-links {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.social-link {
+  color: var(--color-luz);
+  text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: rgba(218, 165, 32, 0.2);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: var(--color-oro);
+  color: var(--color-noche);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(218, 165, 32, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.footer-blessing {
+  font-style: italic;
+  color: var(--color-oro);
+  margin-top: var(--spacing-sm);
+  font-size: 1.1rem;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-title-hero {
+    font-size: 2.2rem;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: var(--spacing-sm);
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .nav-link {
+    text-align: center;
+    width: 100%;
+  }
+
+  .event-item {
+    grid-template-columns: 1fr;
+  }
+
+  .event-date {
+    width: 120px;
+    margin: 0 auto;
+  }
+
+  .content-grid,
+  .traditions-grid,
+  .sayings-container,
+  .instruments-grid,
+  .dishes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-title {
+    font-size: 1.5rem;
+  }
+
+  .tribal-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .sun-symbol {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .content-section {
+    padding: var(--spacing-md) 0;
+  }
+}
+
+/* ===================================
+   Animaciones adicionales
+   =================================== */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scroll reveal animations */
+.content-card,
+.story-box,
+.tradition-item,
+.saying-card,
+.instrument-card,
+.event-item,
+.dish-card {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.content-card:nth-child(1),
+.tradition-item:nth-child(1),
+.saying-card:nth-child(1),
+.instrument-card:nth-child(1),
+.dish-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.content-card:nth-child(2),
+.tradition-item:nth-child(2),
+.saying-card:nth-child(2),
+.instrument-card:nth-child(2),
+.dish-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.content-card:nth-child(3),
+.tradition-item:nth-child(3),
+.saying-card:nth-child(3),
+.instrument-card:nth-child(3),
+.dish-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.content-card:nth-child(4),
+.tradition-item:nth-child(4),
+.saying-card:nth-child(4),
+.instrument-card:nth-child(4),
+.dish-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.content-card:nth-child(5),
+.saying-card:nth-child(5),
+.dish-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.content-card:nth-child(6),
+.saying-card:nth-child(6),
+.dish-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
