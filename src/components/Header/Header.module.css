@@ -1,0 +1,106 @@
+.mainHeader {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-tierra) 0%, var(--color-noche) 100%);
+  color: var(--color-luz);
+  padding: var(--spacing-md) 0;
+  box-shadow: var(--shadow-md);
+}
+
+.headerPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(218, 165, 32, 0.1) 35px, rgba(218, 165, 32, 0.1) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(218, 165, 32, 0.05) 35px, rgba(218, 165, 32, 0.05) 70px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.headerContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.tribalCircle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-oro) 0%, var(--color-fuego) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--color-luz);
+  box-shadow: 0 0 30px rgba(218, 165, 32, 0.5);
+  animation: pulse 3s ease-in-out infinite;
+  cursor: default;
+}
+
+.sunSymbol {
+  font-size: 3rem;
+  animation: rotate 20s linear infinite;
+  display: block;
+}
+
+.siteTitle {
+  font-family: var(--font-titulo);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-oro);
+  margin-top: var(--spacing-xs);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 30px rgba(218, 165, 32, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(218, 165, 32, 0.8);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .siteTitle {
+    font-size: 1.8rem;
+  }
+
+  .tribalCircle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .sunSymbol {
+    font-size: 2.2rem;
+  }
+}

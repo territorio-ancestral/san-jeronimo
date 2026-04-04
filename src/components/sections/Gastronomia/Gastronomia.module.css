@@ -1,0 +1,57 @@
+.gastronomiaSection {
+  padding: var(--spacing-xl) 0;
+  background: linear-gradient(135deg, var(--color-jade) 0%, var(--color-cielo) 100%);
+  color: var(--color-luz);
+}
+
+.sectionTitle {
+  font-family: var(--font-titulo);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: inherit;
+}
+
+.gastronomyIntro {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-lg);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dishesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.dishCard {
+  background: rgba(255, 255, 255, 0.15);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition:
+    transform var(--transition-base),
+    background var(--transition-base);
+}
+
+.dishCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dishIcon {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.dishName {
+  font-family: var(--font-titulo);
+  color: var(--color-oro);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.3rem;
+}

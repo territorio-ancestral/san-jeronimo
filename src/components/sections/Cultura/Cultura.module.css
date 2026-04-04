@@ -1,0 +1,47 @@
+.culturaSection {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-luz);
+}
+
+.sectionTitle {
+  font-family: var(--font-titulo);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-noche);
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.contentCard {
+  background: white;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+  border-top: 4px solid var(--color-oro);
+}
+
+.contentCard:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.cardIcon {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.cardTitle {
+  font-family: var(--font-titulo);
+  color: var(--color-tierra);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.5rem;
+}

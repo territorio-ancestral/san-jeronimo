@@ -1,0 +1,55 @@
+.dichosSection {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-arena);
+  background-image: repeating-linear-gradient(60deg, transparent, transparent 40px, rgba(139, 69, 19, 0.05) 40px, rgba(139, 69, 19, 0.05) 80px);
+}
+
+.sectionTitle {
+  font-family: var(--font-titulo);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-noche);
+}
+
+.sayingsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.sayingCard {
+  background: white;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  border: 2px solid var(--color-tierra);
+}
+
+.quoteMark {
+  font-size: 4rem;
+  color: var(--color-oro);
+  opacity: 0.3;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sayingText {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-tierra);
+  margin: var(--spacing-md) 0 var(--spacing-sm);
+  padding-left: var(--spacing-md);
+}
+
+.sayingFooter {
+  text-align: right;
+  color: var(--color-jade);
+  font-weight: 600;
+}

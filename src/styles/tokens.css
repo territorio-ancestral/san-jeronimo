@@ -1,0 +1,39 @@
+/* ===================================
+   Design Tokens — Territorio Ancestral San Jerónimo
+   =================================== */
+:root {
+  /* Paleta de colores inspirada en cultura indígena */
+  --color-tierra: #8b4513;
+  --color-oro: #daa520;
+  --color-jade: #2d5f3f;
+  --color-cielo: #4a90a4;
+  --color-fuego: #c44536;
+  --color-arena: #e8c99b;
+  --color-noche: #1a1a2e;
+  --color-luz: #f5f5dc;
+
+  /* Tipografía */
+  --font-titulo: "Cinzel", serif;
+  --font-texto: "Lora", serif;
+
+  /* Espaciado */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4rem;
+
+  /* Bordes */
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+
+  /* Sombras */
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  /* Transiciones */
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.8s ease;
+}

@@ -1,0 +1,55 @@
+.musicaSection {
+  padding: var(--spacing-xl) 0;
+  background: linear-gradient(135deg, var(--color-noche) 0%, var(--color-tierra) 100%);
+  color: var(--color-luz);
+}
+
+.sectionTitle {
+  font-family: var(--font-titulo);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: inherit;
+}
+
+.musicIntro {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-lg);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.instrumentsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.instrumentCard {
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(218, 165, 32, 0.3);
+  transition: all var(--transition-base);
+}
+
+.instrumentCard:hover {
+  transform: scale(1.05);
+  border-color: var(--color-oro);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.instrumentIcon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.instrumentName {
+  font-family: var(--font-titulo);
+  color: var(--color-oro);
+  margin-bottom: var(--spacing-sm);
+}

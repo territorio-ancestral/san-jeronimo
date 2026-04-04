@@ -1,0 +1,39 @@
+.historiasSection {
+  padding: var(--spacing-xl) 0;
+  background: linear-gradient(135deg, var(--color-noche) 0%, var(--color-tierra) 100%);
+  color: var(--color-luz);
+}
+
+.sectionTitle {
+  font-family: var(--font-titulo);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: inherit;
+}
+
+.storyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.storyBox {
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  border-left: 5px solid var(--color-oro);
+  backdrop-filter: blur(10px);
+}
+
+.storyTitle {
+  font-family: var(--font-titulo);
+  color: var(--color-oro);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.8rem;
+}
+
+.storyText {
+  font-size: 1.1rem;
+  line-height: 1.9;
+}

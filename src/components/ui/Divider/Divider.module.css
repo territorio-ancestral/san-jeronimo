@@ -1,0 +1,25 @@
+.tribalDivider {
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(to right, transparent, var(--color-oro), transparent);
+  margin: 0 auto var(--spacing-lg);
+  position: relative;
+}
+
+.tribalDivider::before,
+.tribalDivider::after {
+  content: "◆";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-oro);
+  font-size: 1rem;
+}
+
+.tribalDivider::before {
+  left: -20px;
+}
+
+.tribalDivider::after {
+  right: -20px;
+}

@@ -1,0 +1,83 @@
+.territorioSection {
+  padding: var(--spacing-xl) 0;
+  background: linear-gradient(135deg, var(--color-noche) 0%, var(--color-tierra) 100%);
+  color: var(--color-luz);
+}
+
+.sectionTitle {
+  font-family: var(--font-titulo);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: inherit;
+}
+
+.territoryContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: start;
+}
+
+.territorioSubtitulo {
+  font-family: var(--font-titulo);
+  color: var(--color-oro);
+  font-size: 1.5rem;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+}
+
+.territorioSubtitulo:first-child {
+  margin-top: 0;
+}
+
+.sacredSitesList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.sacredSitesList li {
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+.siteName {
+  color: var(--color-oro);
+}
+
+.infoBox {
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(218, 165, 32, 0.3);
+}
+
+.infoBoxTitle {
+  font-family: var(--font-titulo);
+  color: var(--color-oro);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.infoItem {
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+.infoItem:last-child {
+  border-bottom: none;
+}
+
+.infoLabel {
+  color: var(--color-oro);
+}
+
+@media (max-width: 768px) {
+  .territoryContent {
+    grid-template-columns: 1fr;
+  }
+}
